@@ -11,7 +11,7 @@
           <% for(var i=0; i<files.length; i++){ %>
             <li>
               <% if(files[i].resource_type == "raw") { %>
-                <div class="raw-file"></div>
+                <div class="raw-file"><%= files[i].public_id %></div>
               <% } else if (files[i].format == "mp3") { %>
                 <audio src="<%= $.cloudinary.url(files[i].public_id, { "version": files[i].version, "resource_type": 'video', "format": 'mp3'}) %>" controls />
               <% } else { %>
